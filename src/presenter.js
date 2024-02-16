@@ -1,15 +1,14 @@
-import sumar from "./sumador";
+import greeter from "./greeter";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
-const div = document.querySelector("#resultado-div");
+const name = document.getElementById("name");
+const button = document.getElementById("greeter-btn");
+const div = document.getElementById("greeting-div");
 
-form.addEventListener("submit", (event) => {
+button.addEventListener("click", () => {
   event.preventDefault();
-
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
-
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  
+  div.innerHTML = greeter(name.value);
 });
+
+
+
