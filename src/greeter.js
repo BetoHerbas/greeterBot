@@ -1,23 +1,32 @@
-function greeter(name, gender, age) {
+function greeter(name, gender, age, dayHour) {
+  var great = "";
+  if (dayHour >= 6 && dayHour < 12) {
+    great = "Buenos días ";
+  }
+  else if (dayHour >= 12 && dayHour < 20) {
+    great = "Buenas tardes ";
+  }
+  else {
+    great = "Buenas noches ";
+  }
+
   if (age >= 30) {
     if (gender === "hombre") {
-      return "Hola Sr. " + name;
+      great = great + "Sr. " + name;
     }
     else {
-      return "Hola Sra. " + name;
+      great = great + "Sra. " + name;
     }
   }
   else {
     if (gender === "hombre") {
-      return "Hola Joven. " + name;
+      great = great +  "joven " + name;
     }
     else {
-      return "Hola Joven. " + name;
+      great = great +  "joven " + name;
     }
   }
-  
+  return great;
 }
-
-
 
 export default greeter;
