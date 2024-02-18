@@ -1,15 +1,21 @@
 <html>
   <body>
-    <h1>Greeter</h1>
+    <h1 id="title">Saludador</h1>
     <form id="greeter-form">
-      <label for="name">Nombre:</label>
+      <label for="len" id="lblLen">Idioma:</label>
+      <select name="len" id="lanSelector">
+        <option value="es">Español</option>
+        <option value="en">Inglés</option>
+      </select>
+      <br>
+      <label for="name" id="lblName">Nombre:</label>
       <input type="text" id="name" />
-      <label for="gender">Genero:</label>
+      <label for="gender" id="lblGender">Genero:</label>
       <select name="gender" id="genderSelector">
         <option value="hombre">Hombre</option>
         <option value="mujer">Mujer</option>
       </select>
-      <label for="age">Edad:</label>
+      <label for="age" id="lblAge">Edad:</label>
       <input type="number" name="age" id="age">
       <button id="greeter-btn">Saludar</button>
     </form>

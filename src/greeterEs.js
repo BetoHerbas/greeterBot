@@ -1,4 +1,4 @@
-function greeter(name, gender, age, dayHour) {
+function greeterEs(name, gender, age, dayHour) {
   var great = "";
   if (dayHour >= 6 && dayHour < 12) {
     great = "Buenos días ";
@@ -29,4 +29,4 @@ function greeter(name, gender, age, dayHour) {
   return great;
 }
 
-export default greeter;
+export default greeterEs;

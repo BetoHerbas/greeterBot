@@ -1,4 +1,5 @@
-import greeter from "./greeter";
+import greeterEs from "./greeterEs";
+import greeterEn from "./greeterEn";
 
 const name = document.getElementById("name");
 const button = document.getElementById("greeter-btn");
@@ -7,11 +8,48 @@ const genderSelector = document.getElementById("genderSelector");
 const age = document.getElementById("age");
 var date = new Date();
 
+const lan = document.getElementById("lanSelector");
+const lblLen = document.getElementById("lblLen");
+const lblName = document.getElementById("lblName");
+const lblGender = document.getElementById("lblGender");
+const lblAge = document.getElementById("lblAge");
+const title = document.getElementById("title");
+
+lan.addEventListener("change", function () {
+
+  if (lan.value === "es") {
+    title.innerHTML = "Saludador";
+    lblLen.innerHTML = "Idioma:";
+    lblName.innerHTML = "Nombre:";
+    lblGender.innerHTML = "Género:";
+    lblAge.innerHTML = "Edad:";
+    lan.innerHTML = `
+        <option value="es">Español</option>
+        <option value="en">Ingles</option>
+      `;
+    button.innerHTML = "Saludar";
+  }
+  else {
+    title.innerHTML = "Greeter";
+    lblLen.innerHTML = "Language:";
+    lblName.innerHTML = "Name:";
+    lblGender.innerHTML = "Gender:";
+    lblAge.innerHTML = "Age:";
+    lan.innerHTML = `
+    <option value="en">English</option>
+    <option value="es">Spanish</option>`;
+    button.innerHTML = "Greet";
+  }
+});
+
 button.addEventListener("click", () => {
   event.preventDefault();
-
-  let gender = genderSelector.value;
-  div.innerHTML = "<p>" + greeter(name.value, gender, age.value, date.getHours()) + "</p>";
+  if(lan.value === "es"){
+    div.innerHTML = "<p>" + greeterEs(name.value, genderSelector.value, age.value, date.getHours()) + "</p>";
+  }
+  else{
+    div.innerHTML = "<p>" + greeterEn(name.value, genderSelector.value, age.value, date.getHours()) + "</p>";
+  }
 });
 
 
