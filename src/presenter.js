@@ -27,6 +27,9 @@ lan.addEventListener("change", function () {
         <option value="es">Español</option>
         <option value="en">Ingles</option>
       `;
+    genderSelector.innerHTML = `
+        <option value="hombre">Hombre</option>
+        <option value="mujer">Mujer</option>`;
     button.innerHTML = "Saludar";
   }
   else {
@@ -38,19 +41,19 @@ lan.addEventListener("change", function () {
     lan.innerHTML = `
     <option value="en">English</option>
     <option value="es">Spanish</option>`;
+    genderSelector.innerHTML = `
+    <option value="hombre">Man</option>
+    <option value="mujer">Woman</option>`;
     button.innerHTML = "Greet";
   }
 });
 
 button.addEventListener("click", () => {
   event.preventDefault();
-  if(lan.value === "es"){
+  if (lan.value === "es") {
     div.innerHTML = "<p>" + greeterEs(name.value, genderSelector.value, age.value, date.getHours()) + "</p>";
   }
-  else{
+  else {
     div.innerHTML = "<p>" + greeterEn(name.value, genderSelector.value, age.value, date.getHours()) + "</p>";
   }
 });
-
-
-
